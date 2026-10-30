@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation de phishing</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9edef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px #0002;
+        }
+
+        h2 {
+            color: #128c7e;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #128c7e;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <p class="warning">SIMULATION ÉDUCATIVE</p>
+
+    <h2>Vérification de compte</h2>
+
+    <p>Exemple fictif d'une page de phishing.</p>
+
+    <form id="demoForm">
+
+        <input type="text"
+               placeholder="Numéro de téléphone"
+               autocomplete="off">
+
+        <input type="text"
+               placeholder="Code de vérification fictif"
+               autocomplete="off">
+
+        <button type="submit">Vérifier</button>
+
+    </form>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+    document.getElementById("demoForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        document.getElementById("result").innerHTML =
+        "⚠️ ATTENTION ! Ceci était une simulation de phishing. " +
+        "Ne communiquez jamais votre code WhatsApp.";
+
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
